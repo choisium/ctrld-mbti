@@ -15,6 +15,7 @@ body {
 }
 
 .progress .value {
+  width: 0%;
   height: 20px;
   background-color: #ffb103;
   border-radius: 10px;

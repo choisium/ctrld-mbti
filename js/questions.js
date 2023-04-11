@@ -16,7 +16,7 @@ function renderQuestion() {
   choice1El.innerHTML = question.choices[0].text;
   choice2El.innerHTML = question.choices[1].text;
   progressValueEl.style.width =
-    ((currentNumber + 1) / questions.length) * 100 + "%";
+    currentNumber === 0 ? "2%" : (currentNumber / questions.length) * 100 + "%";
 }
 
 function calculateMbti(value) {
@@ -49,6 +49,11 @@ function calculateMbti(value) {
 }
 
 function nextQuestion(choiceNumber) {
+  if (currentNumber === 0 && choiceNumber === 1) {
+    location.href = "/sad-ending.html";
+    return;
+  }
+
   const question = questions[currentNumber];
   calculateMbti(question.choices[choiceNumber].value);
 
