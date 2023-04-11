@@ -81,3 +81,14 @@ body {
   margin-bottom: 40px;
   width: 100%;
 }
+
+@media (max-width: 640px) {
+  .page-title-small {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .result .box {
+    font-size: 20px;
+  }
+}

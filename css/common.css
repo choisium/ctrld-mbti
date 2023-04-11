@@ -19,7 +19,7 @@ img {
 }
 
 .page-subtitle {
-  width: 240px;
+  width: fit-content;
   height: 50px;
   border: 5px solid #ffa32d;
   border-radius: 30px;
@@ -36,6 +36,8 @@ img {
   margin-bottom: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .btn {
@@ -97,9 +99,13 @@ img {
 
 @media (max-width: 640px) {
   body {
-    padding-top: 50px;
+    padding-top: 40px;
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .page-subtitle {
+    font-size: 22px;
   }
 
   .page-title {
@@ -107,6 +113,12 @@ img {
   }
 
   .btn {
-    font-size: 34px;
+    font-size: 30px;
+    height: 80px;
+  }
+
+  .btn-small {
+    font-size: 24px;
+    height: 60px;
   }
 }
