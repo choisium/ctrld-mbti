@@ -7,7 +7,7 @@ const choice1El = document.querySelector(".choice1");
 const choice2El = document.querySelector(".choice2");
 
 let currentNumber = 0;
-let mbti = "";
+let mbti = { e: 0, n: 0, t: 0, j: 0 };
 
 function renderQuestion() {
   const question = questions[currentNumber];
@@ -15,13 +15,42 @@ function renderQuestion() {
   questionEl.innerHTML = question.question;
   choice1El.innerHTML = question.choices[0].text;
   choice2El.innerHTML = question.choices[1].text;
-  progressValueEl.style.width = (currentNumber + 1) * 10 + "%";
+  progressValueEl.style.width =
+    ((currentNumber + 1) / questions.length) * 100 + "%";
+}
+
+function calculateMbti(value) {
+  switch (value) {
+    case "e":
+      mbti["e"] += 1;
+      break;
+    case "i":
+      mbti["e"] -= 1;
+      break;
+    case "n":
+      mbti["n"] += 1;
+      break;
+    case "s":
+      mbti["n"] -= 1;
+      break;
+    case "t":
+      mbti["t"] += 1;
+      break;
+    case "f":
+      mbti["t"] -= 1;
+      break;
+    case "j":
+      mbti["j"] += 1;
+      break;
+    case "p":
+      mbti["j"] -= 1;
+      break;
+  }
 }
 
 function nextQuestion(choiceNumber) {
   const question = questions[currentNumber];
-  mbti = mbti + question.choices[choiceNumber].value;
-  console.log(mbti);
+  calculateMbti(question.choices[choiceNumber].value);
 
   if (currentNumber === questions.length - 1) {
     showResultPage();
@@ -33,7 +62,16 @@ function nextQuestion(choiceNumber) {
 }
 
 function showResultPage() {
-  location.href = "/results.html?mbti=" + mbti;
+  let result = "";
+  if (mbti["e"] > 0) result += "e";
+  else result += "i";
+  if (mbti["n"] > 0) result += "n";
+  else result += "s";
+  if (mbti["t"] > 0) result += "t";
+  else result += "f";
+  if (mbti["j"] > 0) result += "j";
+  else result += "p";
+  location.href = "/results.html?mbti=" + result;
 }
 
 choice1El.addEventListener("click", function () {

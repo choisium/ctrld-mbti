@@ -5,14 +5,14 @@ body {
   background-repeat: no-repeat;
 }
 
+.page-subtitle-small {
+  font-size: 18px;
+}
+
 .character {
   width: 100%;
   max-width: 364px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
-}
-
-.caption {
-  font-size: 30px;
 }

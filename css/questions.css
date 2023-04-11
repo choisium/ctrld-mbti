@@ -15,7 +15,6 @@ body {
 }
 
 .progress .value {
-  width: 10%;
   height: 20px;
   background-color: #ffb103;
   border-radius: 10px;
@@ -54,6 +53,9 @@ body {
 .question-box .choice {
   border-radius: 120px;
   font-size: 22px;
+  line-height: 1.3;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media (max-width: 640px) {

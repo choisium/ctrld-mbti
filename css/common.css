@@ -24,14 +24,18 @@ img {
   border: 5px solid #ffa32d;
   border-radius: 30px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 24px;
   font-weight: 700;
+  text-align: center;
   color: #ffa32d;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .btn {

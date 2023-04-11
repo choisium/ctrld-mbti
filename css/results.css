@@ -5,6 +5,11 @@ body {
   background-repeat: no-repeat;
 }
 
+.page-title-small {
+  font-size: 30px;
+  font-weight: 800;
+}
+
 .character {
   width: 100%;
   max-width: 600px;
@@ -17,6 +22,8 @@ body {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .result .box {
@@ -35,6 +42,7 @@ body {
   padding-bottom: 30px;
   padding-left: 10px;
   padding-right: 10px;
+  box-shadow: 0 4px 25px #dde2e8;
 }
 
 .result h3 {
